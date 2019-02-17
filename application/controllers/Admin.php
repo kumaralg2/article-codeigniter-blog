@@ -19,10 +19,15 @@ class Admin extends MY_Controller {
 		  //fetching values from form
 		  $uname = $this->input->post('username');
 		  $pass = $this->input->post('password');
-		  $this->load->model('login_model');		  
-		  if($this->login_model->isvalidate($uname,$pass)){
+		  $this->load->model('login_model');	
+		  $id = $this->login_model->isvalidate($uname,$pass);	 
+
+		  if($id){
 		    //logic correct
-		    echo "data matched";
+		    //echo "data matched";
+		    //saving the id session in a session
+		    $this->session->set_userdata('id',$id);
+
 		  }else{
 		    //logic failed
 		    echo "data not matched";

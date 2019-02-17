@@ -6,9 +6,13 @@ class login_model extends CI_Model
                     ->get('users');
     // echo "<pre>";
     // print_r($q);
+    //to fetch id in a row
+    // print_r($q->row()->id);
+  //  exit();
+    //print_r($q->row()->username);    
     //select * from users where username=$username and password=$password;
       if($q->num_rows()){
-       return TRUE;
+       return $q->row()->id;
       }else{
        return FALSE;
       }
