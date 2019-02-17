@@ -26,8 +26,9 @@ class Admin extends MY_Controller {
 		    //logic correct
 		    //echo "data matched";
 		    //saving the id session in a session
+		    $this->load->library('session');
 		    $this->session->set_userdata('id',$id);
-
+                    $this->load->view('Admin/dashboard');
 		  }else{
 		    //logic failed
 		    echo "data not matched";
