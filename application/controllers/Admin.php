@@ -28,7 +28,8 @@ class Admin extends MY_Controller {
 		    //saving the id session in a session
 		    $this->load->library('session');
 		    $this->session->set_userdata('id',$id);
-                    $this->load->view('Admin/dashboard');
+		//     $this->load->view('Admin/dashboard');
+		    return redirect('Admin/welcome');
 		  }else{
 		    //logic failed
 		    echo "data not matched";
@@ -40,5 +41,9 @@ class Admin extends MY_Controller {
                 {
                         $this->load->view('Admin/login');
                 }
+	}
+
+	public function welcome(){
+		$this->load->view('Admin/dashboard');
 	}
 }
