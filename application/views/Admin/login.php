@@ -17,7 +17,7 @@
         <div class="col-lg-6">
         <div class="form-group">
         <label for="password">Password</label>
-        <?php echo form_password(['class'=>'form-control', 'placeholder'=>'Enter Password','type'=>'password','name'=>'password','value'=>set_value('password')]);?>    
+        <?php echo form_password(['class'=>'form-control', 'placeholder'=>'Enter Password','type'=>'password','name'=>'password']);?>    
         </div>
         </div>
         <?php echo form_error('password'); ?>
