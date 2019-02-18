@@ -23,12 +23,12 @@ class login_model extends CI_Model
   public function articleList(){
       $this->load->library('session');
       $id = $this->session->userdata('id');
-      $this->db->select('article_title');
-      $this->db->from('articles');
-      $this->db->where(['id', $id]);
-      $q=$this->db->get();
-    //   print_r($q);
-    return $q->result();
+      $q = $this->db->select('article_title')
+                ->from('articles')
+                ->where(['user_id'=>$id])
+                ->get();
+      // print_r($q->result());
+      return $q->result();
       exit;
   }
 
