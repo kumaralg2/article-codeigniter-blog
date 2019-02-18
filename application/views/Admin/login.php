@@ -25,6 +25,7 @@
     </fieldset>
     <?php echo form_submit(['type'=>'submit','class'=>'btn btn-primary','value'=>'Submit']);?>
     <?php echo form_reset(['type'=>'reset','class'=>'btn btn-danger','value'=>'Reset']);?>
+    <?php echo anchor('Users/register', 'Sign up?', 'class="link-class"') ?>
 
   </fieldset>
 </div>

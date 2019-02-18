@@ -11,4 +11,8 @@ class Users extends MY_Controller {
 	{
 		$this->load->view('Users/article_list');
 	}
+	public function register()
+	{
+	$this->load->view('Admin/register');
+	}
 }
