@@ -2,12 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Admin extends MY_Controller {
-
+	//for session to work you have to use construct
 	public function __construct(){
-		parent::__construct();
+        parent::__construct();
     }
     
-	public function index()
+	public function login()
 	{
 		$this->load->library('form_validation');
 		$this->load->helper(array('form', 'url'));
@@ -44,6 +44,8 @@ class Admin extends MY_Controller {
 	}
 
 	public function welcome(){
-		$this->load->view('Admin/dashboard');
+		$this->load->model('login_model');
+		$articles = $this->login_model->articleList();
+		$this->load->view('Admin/dashboard',['articles'=>$articles]);
 	}
 }

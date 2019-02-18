@@ -2,7 +2,7 @@
 <body>
     <div class="container">
     <h1>Admin Login</h1>
-    <?php echo form_open('Admin/index');?>
+    <?php echo form_open('Admin/login');?>
     <fieldset>  
     <div class="row">
         <div class="col-lg-6">
